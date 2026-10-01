@@ -1,0 +1,52 @@
+.msi {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-family: var(--font-data);
+  font-weight: 500;
+  color: var(--c);
+  background: var(--t);
+  border: 1px solid color-mix(in srgb, var(--c) 45%, transparent);
+  border-radius: 999px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.msi__label {
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* sm — inline / table rows (~40 cm) */
+.msi--sm {
+  font-size: 11px;
+  padding: 3px 8px;
+}
+
+/* md — cards / dashboards (~1 m) */
+.msi--md {
+  font-size: 13px;
+  padding: 5px 12px;
+}
+
+/* lg — wall displays (3 m+). Label is mandatory at this size. */
+.msi--lg {
+  font-size: 22px;
+  padding: 10px 22px;
+  border-width: 2px;
+}
+
+/* Motion is reserved for FAULT alone: motion always means "act". */
+.msi--pulse {
+  animation: msi-pulse 1.1s ease-in-out infinite;
+}
+
+@keyframes msi-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--c) 45%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 6px transparent;
+  }
+}

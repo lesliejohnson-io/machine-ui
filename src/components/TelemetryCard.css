@@ -1,0 +1,95 @@
+.tc {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--surface-1);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  min-width: 160px;
+  transition: opacity 0.4s ease;
+}
+
+.tc__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.tc__label {
+  font-family: var(--font-data);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--text-low);
+}
+
+.tc__value {
+  font-family: var(--font-data);
+  font-size: 28px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.tc__unit {
+  font-size: 14px;
+  color: var(--text-mid);
+  margin-left: 3px;
+}
+
+/* Threshold coloring — live data only */
+.tc__value--ok { color: var(--text-hi); }
+.tc__value--warn { color: var(--state-warning); }
+.tc__value--crit { color: var(--state-fault); }
+.tc__value--none { color: var(--text-low); } /* stale/lost: demoted, never shouting */
+
+/* --- Tier 1: STALE — value dims, age counts up, card recedes --- */
+.tc--stale .tc__value {
+  color: var(--text-low);
+}
+
+.tc__age {
+  font-family: var(--font-data);
+  font-size: 10px;
+  color: var(--state-warning);
+  white-space: nowrap;
+}
+
+/* --- Tier 2: SIGNAL LOST — handoff to system OFFLINE state --- */
+.tc--lost {
+  border-color: color-mix(in srgb, var(--state-offline) 60%, transparent);
+}
+
+.tc--lost .tc__value {
+  color: var(--text-low);
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+}
+
+.tc__lost {
+  font-family: var(--font-data);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--state-offline);
+  border: 1px solid var(--state-offline);
+  border-radius: 3px;
+  padding: 1px 6px;
+}
+
+/* --- Sparkline: freezes (stops appending) and dims when not live --- */
+.tc__spark {
+  width: 100%;
+  height: 28px;
+  color: var(--text-mid);
+  transition: opacity 0.4s ease;
+}
+
+.tc__spark--frozen {
+  opacity: 0.35;
+}
+
+.tc__spark--empty {
+  border-bottom: 1px dashed var(--line);
+}

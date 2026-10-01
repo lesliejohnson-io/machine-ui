@@ -1,0 +1,87 @@
+/* ============================================================
+   MACHINE STATE UI — design tokens
+   Principle: the docs chrome is desaturated on purpose.
+   The five state colors are the ONLY saturated hues on screen,
+   so color always means machine state — never decoration.
+   ============================================================ */
+
+:root {
+  /* Surface */
+  --surface-0: #0e1520; /* page */
+  --surface-1: #16202c; /* panel */
+  --surface-2: #1e2a38; /* raised / hover */
+  --line: #263445;
+
+  /* Text */
+  --text-hi: #d8e1ea;
+  --text-mid: #9aa9b8;
+  --text-low: #64748b;
+
+  /* State colors — semantic, never decorative */
+  --state-operational: #2fbf71;
+  --state-warning: #e8b93e;
+  --state-degraded: #e87d3e;
+  --state-fault: #e8484f;
+  --state-offline: #5c6b7a;
+
+  /* State tints (backgrounds behind badges/alerts) */
+  --tint-operational: rgba(47, 191, 113, 0.12);
+  --tint-warning: rgba(232, 185, 62, 0.12);
+  --tint-degraded: rgba(232, 125, 62, 0.12);
+  --tint-fault: rgba(232, 72, 79, 0.14);
+  --tint-offline: rgba(92, 107, 122, 0.16);
+
+  /* Type */
+  --font-display: 'Barlow Condensed', sans-serif; /* industrial signage */
+  --font-body: 'Inter', system-ui, sans-serif; /* prose */
+  --font-data: 'IBM Plex Mono', monospace; /* telemetry values — data reads as data */
+
+  /* Rhythm */
+  --radius: 6px;
+  --gap: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--surface-0);
+  color: var(--text-hi);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+::selection {
+  background: var(--surface-2);
+}
+
+a {
+  color: var(--text-hi);
+}
+
+code {
+  font-family: var(--font-data);
+  font-size: 0.88em;
+  background: var(--surface-1);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--text-hi);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
