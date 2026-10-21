@@ -18,7 +18,7 @@ export default function App() {
       {/* ---------- Live header: the signature ---------- */}
       <header className="docs__hero">
         <div className="docs__kicker">MACHINE STATE UI · v0.1</div>
-        <h1>Components for human–machine trust</h1>
+        <h1>Components for Human–Machine Trust</h1>
         <p className="docs__lede">
           A component library for communicating machine state to human
           operators — the shared design problem across robotics, drones, and
@@ -47,7 +47,7 @@ export default function App() {
 
       {/* ---------- The state model ---------- */}
       <section className="docs__section">
-        <h2>The state model</h2>
+        <h2>The State Model</h2>
         <p>
           Five states cover the operator's real questions: is it working, is
           it about to stop working, is it working worse, has it stopped, and
@@ -167,7 +167,7 @@ export default function App() {
 
       {/* ---------- Roadmap stubs ---------- */}
       <section className="docs__section docs__section--stub">
-        <h2>In progress</h2>
+        <h2>In Progress</h2>
         <p>
           <strong>AlertBanner</strong> ·{' '}
           <strong>StateTimeline</strong> · <strong>FleetGrid</strong> — built

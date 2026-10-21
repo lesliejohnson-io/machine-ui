@@ -1,0 +1,81 @@
+diff --git a/index.html b/index.html
+index d57b3e5..450ed3f 100644
+--- a/index.html
++++ b/index.html
+@@ -11,7 +11,7 @@
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+     <link
+-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
++      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
+       rel="stylesheet"
+     />
+   </head>
+diff --git a/src/App.jsx b/src/App.jsx
+index bfb5408..54b1a7f 100644
+--- a/src/App.jsx
++++ b/src/App.jsx
+@@ -18,7 +18,7 @@ export default function App() {
+       {/* ---------- Live header: the signature ---------- */}
+       <header className="docs__hero">
+         <div className="docs__kicker">MACHINE STATE UI · v0.1</div>
+-        <h1>Components for human–machine trust</h1>
++        <h1>Components for Human–Machine Trust</h1>
+         <p className="docs__lede">
+           A component library for communicating machine state to human
+           operators — the shared design problem across robotics, drones, and
+@@ -47,7 +47,7 @@ export default function App() {
+ 
+       {/* ---------- The state model ---------- */}
+       <section className="docs__section">
+-        <h2>The state model</h2>
++        <h2>The State Model</h2>
+         <p>
+           Five states cover the operator's real questions: is it working, is
+           it about to stop working, is it working worse, has it stopped, and
+@@ -167,7 +167,7 @@ export default function App() {
+ 
+       {/* ---------- Roadmap stubs ---------- */}
+       <section className="docs__section docs__section--stub">
+-        <h2>In progress</h2>
++        <h2>In Progress</h2>
+         <p>
+           <strong>AlertBanner</strong> ·{' '}
+           <strong>StateTimeline</strong> · <strong>FleetGrid</strong> — built
+diff --git a/src/docs/docs.css b/src/docs/docs.css
+index b34e8cc..4dc5715 100644
+--- a/src/docs/docs.css
++++ b/src/docs/docs.css
+@@ -16,8 +16,7 @@
+   font-family: var(--font-display);
+   font-weight: 600;
+   font-size: clamp(34px, 6vw, 52px);
+-  letter-spacing: 0.01em;
+-  text-transform: uppercase;
++  letter-spacing: -0.01em;
+   margin: 8px 0 12px;
+   line-height: 1.05;
+ }
+@@ -100,8 +99,7 @@
+   font-family: var(--font-display);
+   font-weight: 600;
+   font-size: 26px;
+-  letter-spacing: 0.03em;
+-  text-transform: uppercase;
++  letter-spacing: -0.005em;
+   margin: 0 0 10px;
+ }
+ 
+diff --git a/src/tokens.css b/src/tokens.css
+index f60d9be..70ce7ac 100644
+--- a/src/tokens.css
++++ b/src/tokens.css
+@@ -32,7 +32,7 @@
+   --tint-offline: rgba(92, 107, 122, 0.16);
+ 
+   /* Type */
+-  --font-display: 'Barlow Condensed', sans-serif; /* industrial signage */
++  --font-display: 'Archivo', system-ui, sans-serif; /* headlines */
+   --font-body: 'Inter', system-ui, sans-serif; /* prose */
+   --font-data: 'IBM Plex Mono', monospace; /* telemetry values — data reads as data */
+ 

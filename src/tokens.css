@@ -32,7 +32,7 @@
   --tint-offline: rgba(92, 107, 122, 0.16);
 
   /* Type */
-  --font-display: 'Barlow Condensed', sans-serif; /* industrial signage */
+  --font-display: 'Archivo', system-ui, sans-serif; /* headlines */
   --font-body: 'Inter', system-ui, sans-serif; /* prose */
   --font-data: 'IBM Plex Mono', monospace; /* telemetry values — data reads as data */
 
