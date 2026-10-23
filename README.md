@@ -1,45 +1,31 @@
 # Machine State UI
 
-**A component library for communicating machine state to human operators** —
-the shared design problem across robotics, drones, and industrial systems.
+A component library that shows people what a machine is doing, at a glance and under pressure. Robots, drones, and industrial systems all share this problem: an operator has seconds to read a machine's state and decide whether to act.
 
-🔗 Live docs & demo: *(Vercel URL after deploy)*
-📐 Design rationale: [DESIGN_SPEC.md](./DESIGN_SPEC.md)
+**Live docs and demo:** [machine-ui.vercel.app](#)
+**Design rationale:** [DESIGN_SPEC.md](DESIGN_SPEC.md)
 
-## What this is
+## What it is
 
-Five machine states (OPERATIONAL, WARNING, DEGRADED, FAULT, OFFLINE), each
-with a definition, a unique shape, a color, and an **escalation rule** —
-an explicit decision about when a machine may interrupt a human. Components
-inherit the model; screens never improvise it.
+Five states: **Operational, Warning, Degraded, Fault, and Offline.** Each one has a definition, a shape, a color, and an escalation rule that decides when the machine is allowed to interrupt a person. Every component uses the same model, so no screen invents its own.
 
-The docs site runs against a live simulated machine (UNIT-01) that drifts,
-degrades, faults, and drops offline — so every component is demonstrated
-under the imperfect conditions it was designed for.
+The docs run against a simulated machine, UNIT-01, that drifts, degrades, faults, and drops offline. You see every component in the messy conditions it was built for, not just the happy path.
 
-## Design principles (short version)
+## Design principles
 
-1. **Glanceable at distance** — three sizes for three viewing distances
-2. **Never color alone** — shape + label always; colorblind-safe by construction
-3. **Motion means act** — only FAULT animates
-4. **Alarm fatigue is a design input** — escalation rules live in the state model
-5. **Honest about data loss** — every component has a designed stale state
+1. **Readable from a distance.** Three sizes for three viewing distances: on the machine, across the room, and on a dashboard.
+2. **Never color alone.** Every state pairs a shape and a label with its color, so it stays readable for colorblind users.
+3. **Motion means act.** Only Fault animates.
+4. **Alarm fatigue is a design input.** Escalation rules live in the state model, not in individual screens.
+5. **Honest about lost data.** Every component has a designed state for when its data goes stale.
 
-Full rationale in [DESIGN_SPEC.md](./DESIGN_SPEC.md).
+The full reasoning is in [DESIGN_SPEC.md](DESIGN_SPEC.md).
 
 ## Run it
 
-```bash
-npm install
-npm run dev
-```
+    npm install
+    npm run dev
 
 ## Stack
 
-React 18 + Vite. Plain CSS with design tokens. No component framework —
-every pixel is a documented decision.
-
-## Author
-
-Leslie Johnson — senior AI product designer, Pittsburgh PA
-[lesliejohnson.io](https://lesliejohnson.io)
+React 18 and Vite. Plain CSS with design tokens and no component framework, so every visual choice is documented in the spec.
